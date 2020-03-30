@@ -68,7 +68,7 @@
                     </view>
                     <connections>
                         <outlet property="emailTextField" destination="hbV-Rq-805" id="NK3-dv-Gto"/>
-                        <outlet property="nameTextField" destination="JKB-Ow-qOU" id="71s-Um-yZw"/>
+                        <outlet property="nameTextField" destination="rBh-A2-5aH" id="uyS-3l-Rmi"/>
                         <outlet property="passwordTextField" destination="Cpo-cI-NXI" id="qZs-tS-qkN"/>
                         <outlet property="phoneTextField" destination="HgG-us-rAn" id="cex-TW-w2n"/>
                     </connections>
