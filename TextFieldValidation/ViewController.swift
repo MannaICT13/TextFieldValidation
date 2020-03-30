@@ -20,6 +20,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var passwordTextField: UITextField!
     
     var validation = TextFieldValidation()
+ 
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,36 +37,53 @@ class ViewController: UIViewController {
    
         
         let isNameValidate = self.validation.nameValidation(name)
+        
         if isNameValidate == false{
             
-            print("Invalide Name Expression.....")
+            alertDialouge(title: "Error!!", msg: "Invalid Name String!")
             return
         }
          let isEmailValidate = self.validation.emailValidation(email)
       
-        if isEmailValidate == false{
-            print("Invalide Email....")
+         if isEmailValidate == false{
+            alertDialouge(title: "Error!!", msg: "Invalid Email String!")
         return
             
         }
         let isPhoneValidate = self.validation.phoneNumberValidation(phone)
+       
         if isPhoneValidate == false{
             
-            print("Invaide phone.....")
+            alertDialouge(title: "Error!!", msg: "Invalid Phone Number!")
             return
         }
-        let isPwValidate = self.validation.passwordValidation(pw)
+         let isPwValidate = self.validation.passwordValidation(pw)
        
-        if isPwValidate == false{
-            print("Invalide pw.....")
+         if isPwValidate == false{
+            alertDialouge(title: "Error", msg: "Invalid Password!")
             return
         }
       
-        
+        if (isNameValidate == true && isEmailValidate == true && isPhoneValidate == true && isPwValidate == true){
+            alertDialouge(title: "Alert!!", msg: "Success!")
+        }
         
     }
     
 
 
 }
-
+extension ViewController {
+    
+    
+       func alertDialouge(title : String,msg : String){
+        
+        let alertController = UIAlertController(title: title, message: msg, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .cancel, handler: nil)
+        alertController.addAction(ok)
+        self.present(alertController, animated: true, completion: nil)
+        
+        
+    }
+    
+}
