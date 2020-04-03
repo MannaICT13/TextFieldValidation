@@ -14,7 +14,8 @@ class TextFieldValidation {
     
     public func nameValidation(_ name :String) -> Bool{
         
-        let nameRegEx = "^\\w{3,18}$"
+    //    let nameRegEx = "^\\w{3,18}$"
+        let nameRegEx = "^(([^ ]?)(^[a-zA-Z].*[a-zA-Z]$)([^ ]?))$"
         let nameStringTrim = name.trimmingCharacters(in: .whitespaces)
         let ValidateName = NSPredicate(format: "SELF MATCHES %@", nameRegEx)
         let isValidateName = ValidateName.evaluate(with: nameStringTrim)

@@ -33,7 +33,7 @@ class ViewController: UIViewController {
     @IBAction func validationBtnAction(_ sender: Any) {
         
         
-    guard let name = nameTextField.text?.trimmingCharacters(in: .whitespaces), let email = emailTextField.text?.trimmingCharacters(in: .whitespaces), let phone = phoneTextField.text?.trimmingCharacters(in: .whitespaces), let pw = passwordTextField.text?.trimmingCharacters(in: .whitespaces) else{return}
+    guard let name = nameTextField.text, let email = emailTextField.text?.trimmingCharacters(in: .whitespaces), let phone = phoneTextField.text?.trimmingCharacters(in: .whitespaces), let pw = passwordTextField.text?.trimmingCharacters(in: .whitespaces) else{return}
    
         
         let isNameValidate = self.validation.nameValidation(name)
